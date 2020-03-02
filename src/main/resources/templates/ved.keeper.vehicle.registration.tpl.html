@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Register a Vehicle service - user registration email</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<table width="100%"
+       style="text: #0B0C0C; font-size: 17px;
+       font-family: Helvetica Neue, sans-serif, Arial">
+    <tr>
+        <td colspan=3 style="background-color:black; height: 30px">
+            <table width="100%">
+                <tr>
+                    <td width="20%"></td>
+                    <td width="60%">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img alt="gov uk crown" align="middle" style="width:40px; height:35px"
+                                         src="https://dvla-ved-communications-assets.s3.amazonaws.com/ved/email/image/gov.uk_logotype_crown.png"/>
+                                </td>
+                                <td valign="middle" align="center">
+                                    <div style="color: white; font-weight:bold;font-size: 27px;
+                                    text-decoration: none;padding-left: 5px">
+                                        <a rel="nofollow" style="color: white; font-weight:bold;font-size: 27px;
+                                    text-decoration: none">GOV.UK</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="20%"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr/>
+    <tr>
+        <td width="20%"></td>
+        <td width="60%">
+            <table width="100%">
+                <tr>
+                    <td>
+                        <table width="60%">
+                            <tr>
+                                <td>
+                                    <!--#1E7F22-->
+                                    <div style="height: 40px;width: 4px;background-color:#066666"></div>
+                                </td>
+                                <td>
+                                    <img alt="gov uk crest" align="middle" style="width:40px; height:35px"
+                                         src="https://dvla-ved-communications-assets.s3.amazonaws.com/ved/email/image/govuk-crest_x2.png"/>
+                                </td>
+                                <td valign="middle">
+                                    <span style="font-size:24px;">Driver and Vehicle Licencing Agency</span>
+                                </td>
+                            </tr>
+                        </table>
+                        <table width="100%">
+                          <tr>
+                              <td colspan="2">
+                                  <div style="font-size:32px; margin-top: 30px; margin-bottom: 20px; font-weight: bold;">Confirmation of vehicle registration</div>
+
+                                  <div>
+                                      Congratulations, your vehicle retailer has told DVLA that you are now the registered keeper of this new vehicle:
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td colspan="2">
+                                  <div style="background-color: #d7d7d7; margin-top: 25px; margin-bottom: 10px;height: 2px; width: 100%"></div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td width="30%">Registration number:</td>
+                              <td width="70%">
+                                  <b><span style="font:1.3em;
+                                              background-color: #FFD307;
+                                              border: 0.13em solid #333;
+                                              padding: 0.33em 0.4em 0.33em 0.5em;
+                                              border-radius: 0.25em;
+                                              text-transform: uppercase;
+                                              width:5em;
+                                              text-align: center;
+                                              margin-bottom:0.9em;">${registration.number}</span></b>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td colspan="2">
+                                  <div style="background-color: #d7d7d7; margin-top: 10px; margin-bottom: 10px;height: 2px; width: 100%"></div>
+                              </td>
+                          </tr>
+
+                          <tr>
+                              <td width="30%">Date of registration:</td>
+                              <td width="70%">
+                                  <b>${registration.date}</b>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td colspan="2">
+                                  <div style="background-color: #d7d7d7; margin-top: 10px; margin-bottom: 10px;height: 2px; width: 100%"></div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td valign="top" width="30%">Registered by:</td>
+                              <td valign="top" width="70%">
+                                  <b>${retailer.name}</b>
+                                  <br/>
+                                  <b>${retailer.address.line1}</b>
+                                  <br/>
+                                  <b>${retailer.address.line2}</b>
+                                  <br/>
+                                  <b>${retailer.address.line3}</b>
+                                  <br/>
+                                  <b>${retailer.address.line4}</b>
+                                  <br/>
+                                  <b>${retailer.address.line5}</b>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td colspan="2">
+                                  <div style="margin-top: 25px">For further information on how DVLA processes your
+                                      personal data, in particular, how it is collected, used, disclosed, transferred and stored, you should refer to DVLA's Privacy Notice
+                                      <a href="https://www.gov.uk/government/publications/dvla-privacy-policy" target="_blank">https://www.gov.uk/government/publications/dvla-privacy-policy</a>
+                                  </div>
+
+                                  <div style="margin-top: 25px">You can use your vehicle from the date shown above and should receive your new V5C registration certificate (logbook)
+                                      within 2 weeks from that date.
+                                  </div>
+
+                                  <div style="margin-top: 10px">If you're not the registered keeper or have any queries, you can contact DVLA on 0300 7906802 or by visiting
+                                      <a href="https://www.gov.uk/contact-the-dvla" target="_top">https://www.gov.uk/contact-the-dvla</a>
+                                  </div>
+
+                                  <div style="margin-top: 25px">
+                                      <span>Yours sincerely</span>
+
+                                      <div style="margin-top: 10px">
+                                          <div><b>Rohan Gye</b></div>
+                                          <div>Vehicles Service Manager</div>
+                                      </div>
+                                  </div>
+                                  <div style="background-color: #d7d7d7; margin-top: 25px; margin-bottom: 25px;height: 2px; width: 100%"></div>
+
+                                  <div style="color: #6f777b;">This is an automated email. Please do not reply, as we can't respond to emails received at this address.</div>
+
+                              </td>
+                          </tr>
+
+                        </table>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td width="20%"></td>
+    </tr>
+</table>
+</html>

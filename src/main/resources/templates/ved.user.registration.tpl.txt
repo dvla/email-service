@@ -1,0 +1,20 @@
+Driver and Vehicle Licencing Agency
+
+Your individual account has now been created for the Register a Vehicle service.
+Please click on the link below and follow the steps to activate your account.
+
+This link should only be used by:
+
+Name: ${registration.name}
+User ID: ${registration.username}
+
+You can only use this link once and it will become inactive after 72 hours.
+${registration.passwordGenerationUrl}
+
+If you're having any problems with your security questions or need to request a new link, you can contact the DVLA helpdesk on 0300 1231345.
+
+Yours sincerely
+Rohan Gye
+Vehicles Service Manager
+
+This is an automated email. Please do not reply, as we can't respond to emails received at this address.

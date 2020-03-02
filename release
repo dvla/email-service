@@ -1,0 +1,24 @@
+echo "ensure scripts exits on first error"
+set -e
+
+echo "Updating the version from the specified tag"
+mvn versions:set -DnewVersion=${CI_TAG##rc} -DgenerateBackupPoms=false -s settings.xml
+
+echo "Adding pom changes to the commit"
+git add pom.xml
+git commit -m "Release ${CI_TAG##rc}"
+
+echo "Creating release branch"
+git checkout -b release/${CI_TAG##rc}
+git push origin release/${CI_TAG##rc}
+
+echo "Creating next release iteration"
+git fetch origin master
+git checkout master
+git merge release/${CI_TAG##rc}
+mvn versions:set -DnextSnapshot -DgenerateBackupPoms=false -s settings.xml
+
+echo "Updating master for next snapshot version"
+git add pom.xml
+git commit -m "Setting next master iteration"
+git push origin master

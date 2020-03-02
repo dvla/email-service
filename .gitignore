@@ -1,0 +1,8 @@
+/target/
+
+*.iml
+/.idea
+**/target/
+/.serverless
+.aws/dependency-reduced-pom.xml
+dependency-reduced-pom.xml

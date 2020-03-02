@@ -1,0 +1,46 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 9185
+
+  adminConnectors:
+    - type: http
+      port: 9186
+
+sqsConfiguration:
+  #   queueUrl: https://sqs.${AWS_REGION}.amazonaws.com/${AWS_ACCOUNT}/${ENVIRONMENT}-email-service
+  queueUrl:   https://sqs.eu-west-1.amazonaws.com/392336992919/dev-email-service
+  queueRecheckInterval: 5000 #milliseconds
+  endPoint: sqs.eu-west-1.amazonaws.com
+  sqsProxy:
+    host: squid.dev.cis.dvla.gov.uk
+    port: 3128
+
+# Settings for sending emails
+emailConfiguration:
+    regionName: eu-west-1
+    connectionTimeout: 2000 # The amount of time to wait (in milliseconds) when initially establishing a connection before giving up and timing out.
+    connectionMaxIdleMillis: 60000 # The maximum amount of time (in milliseconds) that an idle connection may sit in the connection pool and still be eligible for reuse.
+    requestTimeout: 120000 # The amount of time to wait (in milliseconds) for the request to complete before giving up and timing out
+    # proxy is optional
+    proxy:
+      host: squid.dev.cis.dvla.gov.uk
+      port: 3128
+    templatePath: templates/
+    emailClient: ${EMAIL_CLIENT:-log}
+
+# sqs messages encryption key , 16 char length
+encryptionKey: 1234567890123456
+
+# Logging settings.
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+  # Logger-specific levels.
+  loggers:
+    uk.gov.dvla.osl: DEBUG
+  appenders:
+      - type: console
+        logFormat: "%-5p %date{yyyy-MM-dd HH:mm:ss:SSS} [%thread] %48logger{48} {DVLA-Correlation-Id=%mdc{X-Correlation-Id:-na}}: %m%n%xEx"     

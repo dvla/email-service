@@ -1,0 +1,30 @@
+Driver and Vehicle Licencing Agency
+
+Confirmation of vehicle registration
+
+Congratulations, your vehicle retailer has told DVLA that you are now the registered keeper of this new vehicle:
+
+Registration number:      ${registration.number}
+Date of registration:   ${registration.date}
+Registered by:  ${retailer.name}
+                ${retailer.address.line1}
+                ${retailer.address.line2}
+                ${retailer.address.line3}
+                ${retailer.address.line4}
+                ${retailer.address.line5}
+
+For further information on how DVLA processes your personal data, in particular, how it is collected, used, disclosed,
+transferred and stored, you should refer to DVLA's Privacy Notice https://www.gov.uk/government/publications/dvla-privacy-policy
+
+You can use your vehicle from the date shown above and should receive your new V5C registration certificate (logbook)
+within 2 weeks from that date.
+
+If you're not the registered keeper or have any queries, you can contact DVLA on 0300 7906802 or by
+visiting https://www.gov.uk/contact-the-dvla
+
+Yours sincerely
+
+Rohan Gye
+Vehicles Services Manager
+
+This is an automated email. Please do not reply, as we can't respond to emails received at this address.

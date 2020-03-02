@@ -1,0 +1,55 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 9185
+
+  adminConnectors:
+    - type: http
+      port: 9186
+
+sqsConfiguration:
+  queueUrl: https://sqs.${AWS_REGION}.amazonaws.com/${AWS_ACCOUNT_ID}/${ENVIRONMENT}-email-queue-queue
+  queueRecheckInterval: 2000
+  endPoint: https://sqs.${AWS_REGION}.amazonaws.com
+  sqsProxy:
+    host: squid.${AWS_REGION}
+    port: 3128
+
+emailConfiguration:
+    regionName: eu-west-1
+    connectionTimeout: 2000
+    connectionMaxIdleMillis: 60000
+    requestTimeout: 120000
+    proxy:
+      host: squid.${AWS_REGION}
+      port: 3128
+    templatePath: templates/
+    emailClient: ${EMAIL_CLIENT:-log}
+
+encryptionKey: ${ENCRYPTION_KEY}
+
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+  # Logger-specific levels.
+  loggers:
+    uk.gov.dvla.osl: "${LOG_LEVEL:-INFO}"
+  appenders:
+    - type: console
+      logFormat: "%-5p %date{yyyy-MM-dd HH:mm:ss:SSS} [%thread] %48logger{48} {DVLA-Correlation-Id=%mdc{X-Correlation-Id:-na}}: %m%n%xEx"    
+    - type: file
+      currentLogFilename: /var/log/email-service/email-service.log
+      archive: true
+      archivedLogFilenamePattern: /var/log/email-service/email-service-%d.log
+      archivedFileCount: 6
+      logFormat: "%-5p %date{yyyy-MM-dd HH:mm:ss:SSS} [%thread] %48logger{48} {DVLA-Correlation-Id=%mdc{X-Correlation-Id:-na}}: %m%n%xEx"    
+
+## Generates the swagger API docs from the code annotations
+swagger:
+  resourcePackage: uk.gov.dvla.osl.email.service.resources
+  title: Email Service
+  version: 1.8.0
+  schemes:
+    - https
